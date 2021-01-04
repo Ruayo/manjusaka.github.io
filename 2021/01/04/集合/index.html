@@ -1,0 +1,341 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title> - Hexo</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="List：List集合具有以下特点：
+
+集合中的元素允许重复
+集合中的元素是有顺序的，各元素插入的顺序就是各元素的顺序
+集合中的元素可以通过索引来访问或者设置
+
+List接口常用的实现类有：Arra,"> 
+    <meta name="author" content="John Doe"> 
+    <link rel="alternative" href="atom.xml" title="Hexo" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">Hexo</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://example.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle"></h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title"></h1>
+        <div class="stuff">
+            <span>一月 04, 2021</span>
+            
+
+        </div>
+        <div class="content markdown">
+            <h3 id="List："><a href="#List：" class="headerlink" title="List："></a>List：</h3><p><strong>List集合具有以下特点：</strong></p>
+<ol>
+<li><strong>集合中的元素允许重复</strong></li>
+<li><strong>集合中的元素是有顺序的，各元素插入的顺序就是各元素的顺序</strong></li>
+<li><strong>集合中的元素可以通过索引来访问或者设置</strong></li>
+</ol>
+<p><strong>List接口常用的实现类有：ArrayList、LinkedList、Vector。</strong></p>
+<h4 id="Arraylist（线程不安全）"><a href="#Arraylist（线程不安全）" class="headerlink" title="Arraylist（线程不安全）:"></a>Arraylist（线程不安全）:</h4><p> ArrayList 实现了 List 接口，继承了 AbstractList 抽象类，底层是基于数组实现的，并且实现了动态扩容。 </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ArrayList</span>&lt;<span class="title">E</span>&gt; <span class="keyword">extends</span> <span class="title">AbstractList</span>&lt;<span class="title">E</span>&gt;</span></span><br><span class="line"><span class="class">        <span class="keyword">implements</span> <span class="title">List</span>&lt;<span class="title">E</span>&gt;, <span class="title">RandomAccess</span>, <span class="title">Cloneable</span>, <span class="title">java</span>.<span class="title">io</span>.<span class="title">Serializable</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> DEFAULT_CAPACITY = <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">transient</span> Object[] elementData;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> size;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p> RandomAccess 接口 : 随机访问不需要遍历，就可以通过下标（索引）直接访问到内存地址。 </p>
+<p> Cloneable 接口 : 这表明 ArrayList 是支持拷贝的。ArrayList 内部的确也重写了 Object 类的 <code>clone()</code> 方法 </p>
+<p> Serializable 接口 :序列化转二进制，内部提供了两个私有方法 writeObject 和 readObject 来完成序列化和反序列化 </p>
+<p>动态扩容： ArrayList ，</p>
+<p><strong>优点:</strong> 底层数据结构是数组，查询快，增删慢。<br><strong>缺点:</strong> 线程不安全，效率高 </p>
+<p>遍历ArrayList的元素主要有以下3种方式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ArrayList&lt;String&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        list.add(<span class="string">&quot;我&quot;</span>);</span><br><span class="line">        list.add(<span class="string">&quot;adwj&quot;</span>);</span><br><span class="line">        list.add(<span class="string">&quot;我&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+
+<ol>
+<li><p>迭代器iterator遍历</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Iterator&lt;String&gt; iterator = list.iterator();</span><br><span class="line"><span class="keyword">while</span> (iterator.hasNext())&#123;</span><br><span class="line">    System.out.println(iterator.next());</span><br><span class="line">&#125;</span><br><span class="line">   </span><br></pre></td></tr></table></figure></li>
+<li><p>for循环</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;list.size();i++)&#123;</span><br><span class="line">   System.out.println(list.get(i));</span><br><span class="line">&#125;</span><br><span class="line">       </span><br></pre></td></tr></table></figure></li>
+<li><p>foreach循环</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (String s : list) &#123;</span><br><span class="line">   System.out.println(s);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ol>
+<h4 id="LinkedList-："><a href="#LinkedList-：" class="headerlink" title="LinkedList ："></a>LinkedList ：</h4><p> LinkedList 是一个继承自 AbstractSequentialList 的双向链表，因此它也可以被当作堆栈、队列或双端队列进行操作 </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LinkedList</span>&lt;<span class="title">E</span>&gt;</span></span><br><span class="line"><span class="class">    <span class="keyword">extends</span> <span class="title">AbstractSequentialList</span>&lt;<span class="title">E</span>&gt;</span></span><br><span class="line"><span class="class">    <span class="keyword">implements</span> <span class="title">List</span>&lt;<span class="title">E</span>&gt;, <span class="title">Deque</span>&lt;<span class="title">E</span>&gt;, <span class="title">Cloneable</span>, <span class="title">java</span>.<span class="title">io</span>.<span class="title">Serializable</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">transient</span> <span class="keyword">int</span> size = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">transient</span> Node&lt;E&gt; first;</span><br><span class="line">    <span class="keyword">transient</span> Node&lt;E&gt; last;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>优点:</strong> 底层数据结构是链表，查询慢，增删快。<br><strong>缺点:</strong> 线程不安全，效率高 </p>
+<h4 id="vector（线程安全）"><a href="#vector（线程安全）" class="headerlink" title="vector（线程安全）:"></a>vector（线程安全）:</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Vector</span>&lt;<span class="title">E</span>&gt;</span></span><br><span class="line"><span class="class">    <span class="keyword">extends</span> <span class="title">AbstractList</span>&lt;<span class="title">E</span>&gt;</span></span><br><span class="line"><span class="class">    <span class="keyword">implements</span> <span class="title">List</span>&lt;<span class="title">E</span>&gt;, <span class="title">RandomAccess</span>, <span class="title">Cloneable</span>, <span class="title">java</span>.<span class="title">io</span>.<span class="title">Serializable</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="常问："><a href="#常问：" class="headerlink" title="常问："></a>常问：</h4><h5 id="相同点"><a href="#相同点" class="headerlink" title="相同点"></a>相同点</h5><p>ArrayList、LinkedList、Vector都实现了List接口，所以使用方式很类似</p>
+<h5 id="不同点"><a href="#不同点" class="headerlink" title="不同点"></a>不同点</h5><p>但是ArrayList、LinkedList、Vector的内部实现方式不同，也就导致了它们之间是有区别的。</p>
+<h5 id="存储结构"><a href="#存储结构" class="headerlink" title="存储结构"></a>存储结构</h5><p><strong>ArrayList和Vector是基于数组实现的，LinkedList是基于双向链表实现的。</strong></p>
+<p>这也就导致ArrayList适合随机查找和遍历，而LinkedList适合动态插入和删除元素。</p>
+<h5 id="线程安全性"><a href="#线程安全性" class="headerlink" title="线程安全性"></a>线程安全性</h5><p><strong>ArrayList和LinkedList是线程不安全的，Vector是线程安全的。</strong></p>
+<p>Vector可以看做是ArrayList在多线程环境下的另一种实现方式，这也导致了Vector的效率没有ArraykList和LinkedList高。</p>
+<p>如果要在并发环境下使用ArrayList或者LinkedList，可以调用Collections类的synchronizedList()方法（分情况）</p>
+<p>如果读大于写 那么可以使用CopyOnWriteArrayList&lt;&gt;() 不过会在写操作复制一个list进行写操作 会占用大量内存</p>
+<p><code>CopyOnWriteArrayList</code> 中, 定义了一个可重入锁:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">final</span> <span class="keyword">transient</span> ReentrantLock lock = <span class="keyword">new</span> ReentrantLock();</span><br></pre></td></tr></table></figure>
+<p>该锁用于对所有修改集合的方法 (<code>add</code>, <code>remove</code> 等) 进行同步, 在进行实际修改操作时, 会先复制原来的数组, 再进行修改, 最后替换原来的</p>
+<p> 但也会因此引入 “弱一致性” 问题; 所谓 “弱一致性” 是指当一个线程正在读取数据时, 若此时有另一个线程同时在修改该区域的数据, 读取的线程将无法读取最新的数据, 即该读取线程只能读取到它读取时刻以前的最新数据; </p>
+<p><strong>ArrayList初始容量是10，添加第11个元素会扩容到16，之后扩容因子是1.5+1</strong></p>
+<p><strong>Vector初始容量是10，添加到第11个元素扩容为20，21个元素扩容为40，接着80.扩容因子2</strong></p>
+<h3 id="Set："><a href="#Set：" class="headerlink" title="Set："></a>Set：</h3><p><strong>Set集合包括Set接口以及Set接口的所有实现类。Set集合具有以下特点：</strong></p>
+<ol>
+<li><strong>集合中不包含重复元素(你可以重复添加，但只会保留第1个)</strong></li>
+<li><strong>集合中的元素不一定保证有序</strong></li>
+</ol>
+<p><strong>Set接口常用的实现类有：HashSet、LinkedHashSet、TreeSet。</strong></p>
+<h4 id="Hashset"><a href="#Hashset" class="headerlink" title="Hashset:"></a>Hashset:</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HashSet</span>&lt;<span class="title">E</span>&gt;</span></span><br><span class="line"><span class="class">    <span class="keyword">extends</span> <span class="title">AbstractSet</span>&lt;<span class="title">E</span>&gt;</span></span><br><span class="line"><span class="class">    <span class="keyword">implements</span> <span class="title">Set</span>&lt;<span class="title">E</span>&gt;, <span class="title">Cloneable</span>, <span class="title">java</span>.<span class="title">io</span>.<span class="title">Serializable</span></span></span><br></pre></td></tr></table></figure>
+<p>底层数据结构是哈希表。(无序,唯一)如何来保证元素唯一性?<br>1.依赖两个方法：hashCode()和equals() </p>
+<p>hashCode()判断哈希值是否相同，相同后调用equals() 判断是否是一个元素</p>
+<p>遍历元素用迭代器或者foreach循环</p>
+<h4 id="TreeSet："><a href="#TreeSet：" class="headerlink" title="TreeSet："></a>TreeSet：</h4><p>底层数据结构是红黑树。(唯一，有序)</p>
+<ol>
+<li>如何保证元素排序的呢?<br>自然排序 <strong>实现接口Comparable，重写该接口的方法compareTo（）</strong><br>比较器排序</li>
+<li>如何保证元素唯一性的呢?<br>根据比较的返回值是否是0来决定 ：</li>
+</ol>
+<h4 id="LinkedHashSet："><a href="#LinkedHashSet：" class="headerlink" title="LinkedHashSet："></a>LinkedHashSet：</h4><p>底层数据结构是链表和哈希表。(FIFO插入有序,唯一)<br>1.由链表保证元素有序<br>2.由哈希表保证元素唯一 </p>
+<p> 加载因子为0.75 , 即当 元素个数 超过 容量长度的0.75倍 时，进行扩容 </p>
+<p>扩容增量：<code>原容量的 1 倍</code></p>
+<p>如 <code>HashSet的容量为16，一次扩容后是容量为32</code></p>
+<h3 id="Map："><a href="#Map：" class="headerlink" title="Map："></a>Map：</h3><h4 id="HashMap（线程不安全）"><a href="#HashMap（线程不安全）" class="headerlink" title="HashMap（线程不安全）"></a>HashMap（线程不安全）</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HashMap</span>&lt;<span class="title">K</span>,<span class="title">V</span>&gt; <span class="keyword">extends</span> <span class="title">AbstractMap</span>&lt;<span class="title">K</span>,<span class="title">V</span>&gt;</span></span><br><span class="line"><span class="class">    <span class="keyword">implements</span> <span class="title">Map</span>&lt;<span class="title">K</span>,<span class="title">V</span>&gt;, <span class="title">Cloneable</span>, <span class="title">Serializable</span> </span>&#123;</span><br><span class="line">	......</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p> HashMap的父类是AbstractMap ，继承了Map&lt;K,V&gt;Cloneable, Serializable</p>
+<p><strong>使用entrySet()获得一个有Key+Value的Set集合 可以使用迭代器iterator()或者foreach（）循环遍历</strong></p>
+<p><strong>使用value（）获得一个Value的值,可以使用迭代器iterator()或者foreach（）循环遍历</strong></p>
+<p>JDK8中hashmap底层是通过数组+链表+红黑树来实现的</p>
+<p>JDK8中的因为使用了红黑树保证了插入和查询了效率，所以实际上JDK8中的Hash算法实现的复杂度降低了</p>
+<p>JDK8中数组扩容的条件也发了变化，只会判断是否当前元素个数是否超过了阈值，而不再判断当前put进来的元素对应的数组下标位置是否有值。</p>
+<p>JDK7中是先扩容再添加新元素，JDK8中是先添加新元素然后再扩容</p>
+<h5 id="HashMap中PUT方法的流程？"><a href="#HashMap中PUT方法的流程？" class="headerlink" title="HashMap中PUT方法的流程？"></a>HashMap中PUT方法的流程？</h5><ol>
+<li>通过key计算出个hashcode <strong>(key%table.length，提高效率key&amp;table.length-1，前提数组长度是2的幂)</strong></li>
+<li>通过hashcode与数组表长与操作计算出一个数组下标</li>
+<li>在把put进来的key,value封装为一个node对象</li>
+<li>判断数组下标对应的位置，是不是空，如果是空则把node直接存在该数组位置</li>
+<li>如果该下标对应的位置不为空，则需要把node插入到链表中</li>
+<li>并且还需要判断该链表中是否存在相同的key，如果存在，则更新value</li>
+<li>如果是JDK7，则使用头插法</li>
+<li>如果是JDK8，则会遍历链表，并且在遍历链表的过程中，统计当前链表的元素个数，如果超过8个，则先把链表转变为红黑树，并且把元素插入到红黑树中</li>
+</ol>
+<h5 id="JDK8中链表转变为红黑树的条件？"><a href="#JDK8中链表转变为红黑树的条件？" class="headerlink" title="JDK8中链表转变为红黑树的条件？"></a>JDK8中链表转变为红黑树的条件？</h5><ol>
+<li>链表中的元素的个数为8个或超过8个</li>
+<li>同时，还要满足当前数组的长度大于或等于64才会把链表转变为红黑树。为什么？因为链表转变为红黑树的目的是为了解决链表过长，导致查询和插入效率慢的问题，而如果要解决这个问题，也可以通过数组扩容，把链表缩短也可以解决这个问题。所以在数组长度还不太长的情况，可以先通过数组扩容来解决链表过长的问题。</li>
+</ol>
+<h5 id="HashMap扩容流程是怎样的？"><a href="#HashMap扩容流程是怎样的？" class="headerlink" title="HashMap扩容流程是怎样的？"></a>HashMap扩容流程是怎样的？</h5><ol>
+<li>HashMap的扩容指的就是数组的扩容， 因为数组占用的是连续内存空间，所以数组的扩容其实只能新开一个新的数组，然后把老数组上的元素转移到新数组上来，这样才是数组的扩容</li>
+<li>在HashMap中也是一样，先新建一个2被数组大小的数组</li>
+<li>然后遍历老数组上的没一个位置，如果这个位置上是一个链表，就把这个链表上的元素转移到新数组上去</li>
+<li>在这个过程中就需要遍历链表，当然jdk7，和jdk8在这个实现是有不一样的，jdk7就是简单的遍历链表上的没一个元素，然后按每个元素的hashcode结合新数组的长度重新计算得出一个下标，而重新得到的这个数组下标很可能和之前的数组下标是不一样的，这样子就达到了一种效果，就是扩容之后，某个链表会变短，这也就达到了扩容的目的，缩短链表长度，提高了查询效率</li>
+<li>而在jdk8中，因为涉及到红黑树，这个其实比较复杂，jdk8中其实还会用到一个双向链表来维护红黑树中的元素，所以jdk8中在转移某个位置上的元素时，会去判断如果这个位置是一个红黑树，那么会遍历该位置的双向链表，遍历双向链表统计哪些元素在扩容完之后还是原位置，哪些元素在扩容之后在新位置，这样遍历完双向链表后，就会得到两个子链表，一个放在原下标位置，一个放在新下标位置，如果原下标位置或新下标位置没有元素，则红黑树不用拆分，否则判断这两个子链表的长度，如果超过八，则转成红黑树放到对应的位置，否则把单向链表放到对应的位置。</li>
+<li>元素转移完了之后，在把新数组对象赋值给HashMap的table属性，老数组会被回收到。</li>
+</ol>
+<h5 id="为什么HashMap的数组的大小是2的幂次方数？"><a href="#为什么HashMap的数组的大小是2的幂次方数？" class="headerlink" title="为什么HashMap的数组的大小是2的幂次方数？"></a>为什么HashMap的数组的大小是2的幂次方数？</h5><p>JDK7的HashMap是数组+链表实现的</p>
+<p>JDK8的HashMap是数组+链表+红黑树实现的</p>
+<p>当某个key-value对需要存储到数组中时，需要先生成一个数组下标index，并且这个index不能越界。</p>
+<p>在HashMap中，先得到key的hashcode，hashcode是一个数字，然后通过 hashcode &amp; (table.length - 1) 运算得到一个数组下标index，是通过与运算计算出来一个数组下标的，而不是通过取余，与运算相比于取余运算速度更快，就是<strong>数组的长度得是一个2的幂次方数。2的幂次方数二进制值都是1，10，100，1000…….2的幂次方数-1的二进制值都是11，111，1111……&amp;运算计算出来的值都会小于表长</strong>。不然会增加哈希碰撞概率，浪费内存</p>
+<p><strong>多线程下线程安全的hashmap:</strong></p>
+<p>解决办法：</p>
+<ol>
+<li><pre><code class="java">1. Map map = Collections.synchronizedMap(new HashMap&lt;&gt;());
+2. Map map = new ConcurrentHashMap&lt;&gt;();
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">   </span><br><span class="line"></span><br><span class="line">#### Hashtable：</span><br><span class="line"></span><br><span class="line">&#96;&#96;&#96;java</span><br><span class="line">public class Hashtable&lt;K,V&gt;</span><br><span class="line">    extends Dictionary&lt;K,V&gt;</span><br><span class="line">    implements Map&lt;K,V&gt;, Cloneable, java.io.Serializable &#123;</span><br><span class="line">&#123;</span><br><span class="line">	......</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+HashMap的父类是 Dictionary，继承了Map&lt;K,V&gt;Cloneable, Serializable
+
+HashTable类的使用方法和HashMap基本一样
+</code></pre>
+</li>
+</ol>
+<h4 id="LinkedHashMap："><a href="#LinkedHashMap：" class="headerlink" title="LinkedHashMap："></a>LinkedHashMap：</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LinkedHashMap</span>&lt;<span class="title">K</span>,<span class="title">V</span>&gt;</span></span><br><span class="line"><span class="class">    <span class="keyword">extends</span> <span class="title">HashMap</span>&lt;<span class="title">K</span>,<span class="title">V</span>&gt;</span></span><br><span class="line"><span class="class">    <span class="keyword">implements</span> <span class="title">Map</span>&lt;<span class="title">K</span>,<span class="title">V</span>&gt;</span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">	......</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>inkedHashMap类继承了HashMap类。</p>
+<p>LinkedHashMap类的使用方法和HashMap基本一样</p>
+<h4 id="TreeMap："><a href="#TreeMap：" class="headerlink" title="TreeMap："></a>TreeMap：</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TreeMap</span>&lt;<span class="title">K</span>,<span class="title">V</span>&gt;</span></span><br><span class="line"><span class="class">    <span class="keyword">extends</span> <span class="title">AbstractMap</span>&lt;<span class="title">K</span>,<span class="title">V</span>&gt;</span></span><br><span class="line"><span class="class">    <span class="keyword">implements</span> <span class="title">NavigableMap</span>&lt;<span class="title">K</span>,<span class="title">V</span>&gt;, <span class="title">Cloneable</span>, <span class="title">java</span>.<span class="title">io</span>.<span class="title">Serializable</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">	......</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p> TreeMap中的元素是有序的，默认的排序规则是按照key的字典顺序升序排序 </p>
+<p>TreeMap类的使用方法和HashMap基本一样 </p>
+<h4 id="4类区别："><a href="#4类区别：" class="headerlink" title="4类区别："></a>4类区别：</h4><h5 id="相同点-1"><a href="#相同点-1" class="headerlink" title="相同点"></a>相同点</h5><p>1)HashMap、Hashtable、LinkedHashMap、TreeMap都实现了Map接口</p>
+<p>2)四者都保证了Key的唯一性，即不允许Key重复</p>
+<h5 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h5><p>HashMap不保证元素的顺序</p>
+<p>Hashtable不保证元素的顺序</p>
+<p>LinkHashMap保证FIFO即按插入顺序排序（链表）</p>
+<p>TreeMap保证元素的顺序，支持自定义排序规则（树）</p>
+<h3 id="Java集合类初始容量、加载因子、扩容增量"><a href="#Java集合类初始容量、加载因子、扩容增量" class="headerlink" title="Java集合类初始容量、加载因子、扩容增量"></a>Java集合类初始容量、加载因子、扩容增量</h3><table>
+<thead>
+<tr>
+<th>集合</th>
+<th>默认初始容量</th>
+<th>加载因子</th>
+<th>扩容增量</th>
+<th>第一次扩容容量</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ArrayList</td>
+<td>10</td>
+<td>1</td>
+<td>1.5+1</td>
+<td>16</td>
+</tr>
+<tr>
+<td>Vector</td>
+<td>10</td>
+<td>1</td>
+<td>2</td>
+<td>20</td>
+</tr>
+<tr>
+<td>Hashset</td>
+<td>16</td>
+<td>0.75</td>
+<td>1</td>
+<td>32</td>
+</tr>
+<tr>
+<td>Hashtable</td>
+<td>16</td>
+<td>0.75</td>
+<td>1</td>
+<td>32</td>
+</tr>
+</tbody></table>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+		data-enable='false'
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>
